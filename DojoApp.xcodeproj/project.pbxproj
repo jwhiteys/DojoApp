@@ -1,0 +1,286 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2AE151EC18200C8EF16 /* UIKit.framework */; };
+		DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B0151EC18200C8EF16 /* Foundation.framework */; };
+		DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */; };
+		DC44D2B5151EC18200C8EF16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B4151EC18200C8EF16 /* CoreData.framework */; };
+		DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */; };
+		DC44D2BD151EC18200C8EF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2BC151EC18200C8EF16 /* main.m */; };
+		DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C0151EC18200C8EF16 /* AppDelegate.m */; };
+		DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC44D2AA151EC18200C8EF16 /* DojoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DojoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC44D2AE151EC18200C8EF16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC44D2B0151EC18200C8EF16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC44D2B4151EC18200C8EF16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC44D2B8151EC18200C8EF16 /* DojoApp-Info.plist */ = {isa = PBXFileReference; path = "DojoApp-Info.plist"; sourceTree = "<group>"; };
+		DC44D2BA151EC18200C8EF16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC44D2BC151EC18200C8EF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC44D2BE151EC18200C8EF16 /* DojoApp-Prefix.pch */ = {isa = PBXFileReference; path = "DojoApp-Prefix.pch"; sourceTree = "<group>"; };
+		DC44D2BF151EC18200C8EF16 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC44D2C0151EC18200C8EF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DojoApp.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC44D2A7151EC18200C8EF16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */,
+				DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */,
+				DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */,
+				DC44D2B5151EC18200C8EF16 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC44D29F151EC18200C8EF16 = {
+			isa = PBXGroup;
+			children = (
+				DC44D2B6151EC18200C8EF16 /* DojoApp */,
+				DC44D2AD151EC18200C8EF16 /* Frameworks */,
+				DC44D2AB151EC18200C8EF16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC44D2AB151EC18200C8EF16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2AA151EC18200C8EF16 /* DojoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC44D2AD151EC18200C8EF16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2AE151EC18200C8EF16 /* UIKit.framework */,
+				DC44D2B0151EC18200C8EF16 /* Foundation.framework */,
+				DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */,
+				DC44D2B4151EC18200C8EF16 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC44D2B6151EC18200C8EF16 /* DojoApp */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2BF151EC18200C8EF16 /* AppDelegate.h */,
+				DC44D2C0151EC18200C8EF16 /* AppDelegate.m */,
+				DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */,
+				DC44D2B7151EC18200C8EF16 /* Supporting Files */,
+			);
+			path = DojoApp;
+			sourceTree = "<group>";
+		};
+		DC44D2B7151EC18200C8EF16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2B8151EC18200C8EF16 /* DojoApp-Info.plist */,
+				DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */,
+				DC44D2BC151EC18200C8EF16 /* main.m */,
+				DC44D2BE151EC18200C8EF16 /* DojoApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC44D2A9151EC18200C8EF16 /* DojoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC44D2C7151EC18200C8EF16 /* Build configuration list for PBXNativeTarget "DojoApp" */;
+			buildPhases = (
+				DC44D2A6151EC18200C8EF16 /* Sources */,
+				DC44D2A7151EC18200C8EF16 /* Frameworks */,
+				DC44D2A8151EC18200C8EF16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DojoApp;
+			productName = DojoApp;
+			productReference = DC44D2AA151EC18200C8EF16 /* DojoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC44D2A1151EC18200C8EF16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DC44D2A4151EC18200C8EF16 /* Build configuration list for PBXProject "DojoApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC44D29F151EC18200C8EF16;
+			productRefGroup = DC44D2AB151EC18200C8EF16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC44D2A9151EC18200C8EF16 /* DojoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC44D2A8151EC18200C8EF16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC44D2A6151EC18200C8EF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2BD151EC18200C8EF16 /* main.m in Sources */,
+				DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */,
+				DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC44D2BA151EC18200C8EF16 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC44D2C5151EC18200C8EF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC44D2C6151EC18200C8EF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC44D2C8151EC18200C8EF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DojoApp/DojoApp-Prefix.pch";
+				INFOPLIST_FILE = "DojoApp/DojoApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC44D2C9151EC18200C8EF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DojoApp/DojoApp-Prefix.pch";
+				INFOPLIST_FILE = "DojoApp/DojoApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC44D2A4151EC18200C8EF16 /* Build configuration list for PBXProject "DojoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC44D2C5151EC18200C8EF16 /* Debug */,
+				DC44D2C6151EC18200C8EF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC44D2C7151EC18200C8EF16 /* Build configuration list for PBXNativeTarget "DojoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC44D2C8151EC18200C8EF16 /* Debug */,
+				DC44D2C9151EC18200C8EF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */,
+			);
+			currentVersion = DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */;
+			path = DojoApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DC44D2A1151EC18200C8EF16 /* Project object */;
+}
