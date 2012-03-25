@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="AbstractEntry" representedClassName="AbstractEntry" isAbstract="YES" syncable="YES">
+        <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="BasicTask" representedClassName="BasicTask" parentEntity="AbstractEntry" syncable="YES">
+        <attribute name="dingCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="productivity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="quantCount" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="quantUnitType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="usesQuants" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="goal" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="tasks" inverseEntity="Goal" syncable="YES"/>
+    </entity>
+    <entity name="EnduranceTask" representedClassName="EnduranceTask" parentEntity="BasicTask" syncable="YES">
+        <attribute name="isEnduranceTask" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="totalTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Goal" representedClassName="Goal" parentEntity="AbstractEntry" syncable="YES">
+        <relationship name="subject" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="goals" inverseEntity="Subject" syncable="YES"/>
+        <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicTask" inverseName="goal" inverseEntity="BasicTask" syncable="YES"/>
+    </entity>
+    <entity name="Subject" representedClassName="Subject" parentEntity="AbstractEntry" syncable="YES">
+        <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="subject" inverseEntity="Goal" syncable="YES"/>
+    </entity>
+    <entity name="TrainingTask" representedClassName="TrainingTask" parentEntity="BasicTask" syncable="YES">
+        <attribute name="actualTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="goalTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="isTrainingTask" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AbstractEntry" positionX="225" positionY="-99" width="128" height="90"/>
+        <element name="BasicTask" positionX="315" positionY="63" width="128" height="195"/>
+        <element name="EnduranceTask" positionX="468" positionY="195" width="128" height="75"/>
+        <element name="Goal" positionX="135" positionY="87" width="128" height="75"/>
+        <element name="Subject" positionX="54" positionY="-9" width="128" height="60"/>
+        <element name="TrainingTask" positionX="466" positionY="0" width="128" height="90"/>
+    </elements>
 </model>

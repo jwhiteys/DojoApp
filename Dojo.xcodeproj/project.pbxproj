@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2AE151EC18200C8EF16 /* UIKit.framework */; };
+		DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B0151EC18200C8EF16 /* Foundation.framework */; };
+		DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */; };
+		DC44D2B5151EC18200C8EF16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B4151EC18200C8EF16 /* CoreData.framework */; };
+		DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */; };
+		DC44D2BD151EC18200C8EF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2BC151EC18200C8EF16 /* main.m */; };
+		DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C0151EC18200C8EF16 /* AppDelegate.m */; };
+		DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */; };
+		DC44D2CF151EC67000C8EF16 /* AbstractEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */; };
+		DC44D2D2151EC68800C8EF16 /* BasicTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2D1151EC68800C8EF16 /* BasicTask.m */; };
+		DC44D2D8151EC6A000C8EF16 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2D7151EC6A000C8EF16 /* Goal.m */; };
+		DC44D2DB151EC6AD00C8EF16 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2DA151EC6AD00C8EF16 /* Subject.m */; };
+		DC44D2DE151EC6BA00C8EF16 /* TrainingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */; };
+		DC7EFFE7151EE816001B464E /* EnduranceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7EFFE6151EE816001B464E /* EnduranceTask.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC44D2AA151EC18200C8EF16 /* Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC44D2AE151EC18200C8EF16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DC44D2B0151EC18200C8EF16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DC44D2B4151EC18200C8EF16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC44D2B8151EC18200C8EF16 /* Dojo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dojo-Info.plist"; sourceTree = "<group>"; };
+		DC44D2BA151EC18200C8EF16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC44D2BC151EC18200C8EF16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC44D2BE151EC18200C8EF16 /* Dojo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dojo-Prefix.pch"; sourceTree = "<group>"; };
+		DC44D2BF151EC18200C8EF16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC44D2C0151EC18200C8EF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DojoApp.xcdatamodel; sourceTree = "<group>"; };
+		DC44D2CD151EC67000C8EF16 /* AbstractEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractEntry.h; sourceTree = "<group>"; };
+		DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractEntry.m; sourceTree = "<group>"; };
+		DC44D2D0151EC68800C8EF16 /* BasicTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTask.h; sourceTree = "<group>"; };
+		DC44D2D1151EC68800C8EF16 /* BasicTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTask.m; sourceTree = "<group>"; };
+		DC44D2D6151EC6A000C8EF16 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		DC44D2D7151EC6A000C8EF16 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		DC44D2D9151EC6AD00C8EF16 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		DC44D2DA151EC6AD00C8EF16 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		DC44D2DC151EC6BA00C8EF16 /* TrainingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTask.h; sourceTree = "<group>"; };
+		DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTask.m; sourceTree = "<group>"; };
+		DC7EFFE5151EE816001B464E /* EnduranceTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnduranceTask.h; sourceTree = "<group>"; };
+		DC7EFFE6151EE816001B464E /* EnduranceTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnduranceTask.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC44D2A7151EC18200C8EF16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */,
+				DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */,
+				DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */,
+				DC44D2B5151EC18200C8EF16 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC44D29F151EC18200C8EF16 = {
+			isa = PBXGroup;
+			children = (
+				DC44D2B6151EC18200C8EF16 /* DojoApp */,
+				DC44D2AD151EC18200C8EF16 /* Frameworks */,
+				DC44D2AB151EC18200C8EF16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC44D2AB151EC18200C8EF16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2AA151EC18200C8EF16 /* Dojo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC44D2AD151EC18200C8EF16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2AE151EC18200C8EF16 /* UIKit.framework */,
+				DC44D2B0151EC18200C8EF16 /* Foundation.framework */,
+				DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */,
+				DC44D2B4151EC18200C8EF16 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC44D2B6151EC18200C8EF16 /* DojoApp */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2CC151EC21700C8EF16 /* Views */,
+				DC44D2CB151EC21300C8EF16 /* Controllers */,
+				DC44D2CA151EC21000C8EF16 /* Models */,
+				DC44D2B7151EC18200C8EF16 /* Supporting Files */,
+			);
+			path = DojoApp;
+			sourceTree = "<group>";
+		};
+		DC44D2B7151EC18200C8EF16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2B8151EC18200C8EF16 /* Dojo-Info.plist */,
+				DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */,
+				DC44D2BC151EC18200C8EF16 /* main.m */,
+				DC44D2BE151EC18200C8EF16 /* Dojo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC44D2CA151EC21000C8EF16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */,
+				DC44D2DC151EC6BA00C8EF16 /* TrainingTask.h */,
+				DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */,
+				DC7EFFE5151EE816001B464E /* EnduranceTask.h */,
+				DC7EFFE6151EE816001B464E /* EnduranceTask.m */,
+				DC44D2D9151EC6AD00C8EF16 /* Subject.h */,
+				DC44D2DA151EC6AD00C8EF16 /* Subject.m */,
+				DC44D2D6151EC6A000C8EF16 /* Goal.h */,
+				DC44D2D7151EC6A000C8EF16 /* Goal.m */,
+				DC44D2D0151EC68800C8EF16 /* BasicTask.h */,
+				DC44D2D1151EC68800C8EF16 /* BasicTask.m */,
+				DC44D2CD151EC67000C8EF16 /* AbstractEntry.h */,
+				DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DC44D2CB151EC21300C8EF16 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC44D2BF151EC18200C8EF16 /* AppDelegate.h */,
+				DC44D2C0151EC18200C8EF16 /* AppDelegate.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DC44D2CC151EC21700C8EF16 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC44D2A9151EC18200C8EF16 /* Dojo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC44D2C7151EC18200C8EF16 /* Build configuration list for PBXNativeTarget "Dojo" */;
+			buildPhases = (
+				DC44D2A6151EC18200C8EF16 /* Sources */,
+				DC44D2A7151EC18200C8EF16 /* Frameworks */,
+				DC44D2A8151EC18200C8EF16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dojo;
+			productName = DojoApp;
+			productReference = DC44D2AA151EC18200C8EF16 /* Dojo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC44D2A1151EC18200C8EF16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = DC44D2A4151EC18200C8EF16 /* Build configuration list for PBXProject "Dojo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC44D29F151EC18200C8EF16;
+			productRefGroup = DC44D2AB151EC18200C8EF16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC44D2A9151EC18200C8EF16 /* Dojo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC44D2A8151EC18200C8EF16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC44D2A6151EC18200C8EF16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC44D2BD151EC18200C8EF16 /* main.m in Sources */,
+				DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */,
+				DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */,
+				DC44D2CF151EC67000C8EF16 /* AbstractEntry.m in Sources */,
+				DC44D2D2151EC68800C8EF16 /* BasicTask.m in Sources */,
+				DC44D2D8151EC6A000C8EF16 /* Goal.m in Sources */,
+				DC44D2DB151EC6AD00C8EF16 /* Subject.m in Sources */,
+				DC44D2DE151EC6BA00C8EF16 /* TrainingTask.m in Sources */,
+				DC7EFFE7151EE816001B464E /* EnduranceTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC44D2BA151EC18200C8EF16 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC44D2C5151EC18200C8EF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC44D2C6151EC18200C8EF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC44D2C8151EC18200C8EF16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DojoApp/Dojo-Prefix.pch";
+				INFOPLIST_FILE = "DojoApp/Dojo-Info.plist";
+				PRODUCT_NAME = Dojo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DC44D2C9151EC18200C8EF16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DojoApp/Dojo-Prefix.pch";
+				INFOPLIST_FILE = "DojoApp/Dojo-Info.plist";
+				PRODUCT_NAME = Dojo;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC44D2A4151EC18200C8EF16 /* Build configuration list for PBXProject "Dojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC44D2C5151EC18200C8EF16 /* Debug */,
+				DC44D2C6151EC18200C8EF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC44D2C7151EC18200C8EF16 /* Build configuration list for PBXNativeTarget "Dojo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC44D2C8151EC18200C8EF16 /* Debug */,
+				DC44D2C9151EC18200C8EF16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */,
+			);
+			currentVersion = DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */;
+			path = DojoApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DC44D2A1151EC18200C8EF16 /* Project object */;
+}
