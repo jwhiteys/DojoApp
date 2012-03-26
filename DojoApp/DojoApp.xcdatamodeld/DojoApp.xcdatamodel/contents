@@ -2,6 +2,8 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11D50" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AbstractEntry" representedClassName="AbstractEntry" isAbstract="YES" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="percentChangeProductivity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="percentChangeTimeTrained" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -22,10 +24,12 @@
         <attribute name="totalTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
     </entity>
     <entity name="Goal" representedClassName="Goal" parentEntity="AbstractEntry" syncable="YES">
+        <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="subject" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="goals" inverseEntity="Subject" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicTask" inverseName="goal" inverseEntity="BasicTask" syncable="YES"/>
     </entity>
     <entity name="Subject" representedClassName="Subject" parentEntity="AbstractEntry" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="goals" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Goal" inverseName="subject" inverseEntity="Goal" syncable="YES"/>
     </entity>
     <entity name="TrainingTask" representedClassName="TrainingTask" parentEntity="BasicTask" syncable="YES">

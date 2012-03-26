@@ -15,12 +15,15 @@
 		DC44D2BD151EC18200C8EF16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2BC151EC18200C8EF16 /* main.m */; };
 		DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C0151EC18200C8EF16 /* AppDelegate.m */; };
 		DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */; };
-		DC44D2CF151EC67000C8EF16 /* AbstractEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */; };
-		DC44D2D2151EC68800C8EF16 /* BasicTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2D1151EC68800C8EF16 /* BasicTask.m */; };
-		DC44D2D8151EC6A000C8EF16 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2D7151EC6A000C8EF16 /* Goal.m */; };
-		DC44D2DB151EC6AD00C8EF16 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2DA151EC6AD00C8EF16 /* Subject.m */; };
-		DC44D2DE151EC6BA00C8EF16 /* TrainingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */; };
-		DC7EFFE7151EE816001B464E /* EnduranceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7EFFE6151EE816001B464E /* EnduranceTask.m */; };
+		DC5C65E8151FBB14002F6BE5 /* DojoMainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C65E7151FBB14002F6BE5 /* DojoMainTableVC.m */; };
+		DC5C65EC151FBE74002F6BE5 /* DojoDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C65EB151FBE74002F6BE5 /* DojoDataManager.m */; };
+		DC5C65F2151FC725002F6BE5 /* DojoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC5C65F1151FC725002F6BE5 /* DojoConfig.plist */; };
+		DC5C65FA151FFEC8002F6BE5 /* AbstractEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C65F9151FFEC8002F6BE5 /* AbstractEntry.m */; };
+		DC5C6600151FFEE5002F6BE5 /* EnduranceTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C65FF151FFEE5002F6BE5 /* EnduranceTask.m */; };
+		DC5C6603151FFEF4002F6BE5 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6602151FFEF4002F6BE5 /* Goal.m */; };
+		DC5C6606151FFF01002F6BE5 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6605151FFF01002F6BE5 /* Subject.m */; };
+		DC5C6609151FFF0A002F6BE5 /* TrainingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */; };
+		DC5C660C152005D4002F6BE5 /* BasicTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C660B152005D4002F6BE5 /* BasicTask.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,18 +39,23 @@
 		DC44D2BF151EC18200C8EF16 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DC44D2C0151EC18200C8EF16 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DC44D2C3151EC18200C8EF16 /* DojoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DojoApp.xcdatamodel; sourceTree = "<group>"; };
-		DC44D2CD151EC67000C8EF16 /* AbstractEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractEntry.h; sourceTree = "<group>"; };
-		DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractEntry.m; sourceTree = "<group>"; };
-		DC44D2D0151EC68800C8EF16 /* BasicTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTask.h; sourceTree = "<group>"; };
-		DC44D2D1151EC68800C8EF16 /* BasicTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTask.m; sourceTree = "<group>"; };
-		DC44D2D6151EC6A000C8EF16 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
-		DC44D2D7151EC6A000C8EF16 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
-		DC44D2D9151EC6AD00C8EF16 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
-		DC44D2DA151EC6AD00C8EF16 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
-		DC44D2DC151EC6BA00C8EF16 /* TrainingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTask.h; sourceTree = "<group>"; };
-		DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTask.m; sourceTree = "<group>"; };
-		DC7EFFE5151EE816001B464E /* EnduranceTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnduranceTask.h; sourceTree = "<group>"; };
-		DC7EFFE6151EE816001B464E /* EnduranceTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnduranceTask.m; sourceTree = "<group>"; };
+		DC5C65E6151FBB14002F6BE5 /* DojoMainTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoMainTableVC.h; sourceTree = "<group>"; };
+		DC5C65E7151FBB14002F6BE5 /* DojoMainTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoMainTableVC.m; sourceTree = "<group>"; };
+		DC5C65EA151FBE74002F6BE5 /* DojoDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoDataManager.h; sourceTree = "<group>"; };
+		DC5C65EB151FBE74002F6BE5 /* DojoDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoDataManager.m; sourceTree = "<group>"; };
+		DC5C65F1151FC725002F6BE5 /* DojoConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DojoConfig.plist; sourceTree = "<group>"; };
+		DC5C65F8151FFEC8002F6BE5 /* AbstractEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractEntry.h; sourceTree = "<group>"; };
+		DC5C65F9151FFEC8002F6BE5 /* AbstractEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractEntry.m; sourceTree = "<group>"; };
+		DC5C65FE151FFEE5002F6BE5 /* EnduranceTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnduranceTask.h; sourceTree = "<group>"; };
+		DC5C65FF151FFEE5002F6BE5 /* EnduranceTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnduranceTask.m; sourceTree = "<group>"; };
+		DC5C6601151FFEF4002F6BE5 /* Goal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goal.h; sourceTree = "<group>"; };
+		DC5C6602151FFEF4002F6BE5 /* Goal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goal.m; sourceTree = "<group>"; };
+		DC5C6604151FFF01002F6BE5 /* Subject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Subject.h; sourceTree = "<group>"; };
+		DC5C6605151FFF01002F6BE5 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
+		DC5C6607151FFF0A002F6BE5 /* TrainingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTask.h; sourceTree = "<group>"; };
+		DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTask.m; sourceTree = "<group>"; };
+		DC5C660A152005D4002F6BE5 /* BasicTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicTask.h; path = ../BasicTask.h; sourceTree = "<group>"; };
+		DC5C660B152005D4002F6BE5 /* BasicTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicTask.m; path = ../BasicTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		DC44D2B7151EC18200C8EF16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC5C65F1151FC725002F6BE5 /* DojoConfig.plist */,
 				DC44D2B8151EC18200C8EF16 /* Dojo-Info.plist */,
 				DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */,
 				DC44D2BC151EC18200C8EF16 /* main.m */,
@@ -118,19 +127,21 @@
 		DC44D2CA151EC21000C8EF16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC5C660A152005D4002F6BE5 /* BasicTask.h */,
+				DC5C660B152005D4002F6BE5 /* BasicTask.m */,
 				DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */,
-				DC44D2DC151EC6BA00C8EF16 /* TrainingTask.h */,
-				DC44D2DD151EC6BA00C8EF16 /* TrainingTask.m */,
-				DC7EFFE5151EE816001B464E /* EnduranceTask.h */,
-				DC7EFFE6151EE816001B464E /* EnduranceTask.m */,
-				DC44D2D9151EC6AD00C8EF16 /* Subject.h */,
-				DC44D2DA151EC6AD00C8EF16 /* Subject.m */,
-				DC44D2D6151EC6A000C8EF16 /* Goal.h */,
-				DC44D2D7151EC6A000C8EF16 /* Goal.m */,
-				DC44D2D0151EC68800C8EF16 /* BasicTask.h */,
-				DC44D2D1151EC68800C8EF16 /* BasicTask.m */,
-				DC44D2CD151EC67000C8EF16 /* AbstractEntry.h */,
-				DC44D2CE151EC67000C8EF16 /* AbstractEntry.m */,
+				DC5C6607151FFF0A002F6BE5 /* TrainingTask.h */,
+				DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */,
+				DC5C6604151FFF01002F6BE5 /* Subject.h */,
+				DC5C6605151FFF01002F6BE5 /* Subject.m */,
+				DC5C6601151FFEF4002F6BE5 /* Goal.h */,
+				DC5C6602151FFEF4002F6BE5 /* Goal.m */,
+				DC5C65FE151FFEE5002F6BE5 /* EnduranceTask.h */,
+				DC5C65FF151FFEE5002F6BE5 /* EnduranceTask.m */,
+				DC5C65F8151FFEC8002F6BE5 /* AbstractEntry.h */,
+				DC5C65F9151FFEC8002F6BE5 /* AbstractEntry.m */,
+				DC5C65EA151FBE74002F6BE5 /* DojoDataManager.h */,
+				DC5C65EB151FBE74002F6BE5 /* DojoDataManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -140,6 +151,8 @@
 			children = (
 				DC44D2BF151EC18200C8EF16 /* AppDelegate.h */,
 				DC44D2C0151EC18200C8EF16 /* AppDelegate.m */,
+				DC5C65E6151FBB14002F6BE5 /* DojoMainTableVC.h */,
+				DC5C65E7151FBB14002F6BE5 /* DojoMainTableVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */,
+				DC5C65F2151FC725002F6BE5 /* DojoConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +229,14 @@
 				DC44D2BD151EC18200C8EF16 /* main.m in Sources */,
 				DC44D2C1151EC18200C8EF16 /* AppDelegate.m in Sources */,
 				DC44D2C4151EC18200C8EF16 /* DojoApp.xcdatamodeld in Sources */,
-				DC44D2CF151EC67000C8EF16 /* AbstractEntry.m in Sources */,
-				DC44D2D2151EC68800C8EF16 /* BasicTask.m in Sources */,
-				DC44D2D8151EC6A000C8EF16 /* Goal.m in Sources */,
-				DC44D2DB151EC6AD00C8EF16 /* Subject.m in Sources */,
-				DC44D2DE151EC6BA00C8EF16 /* TrainingTask.m in Sources */,
-				DC7EFFE7151EE816001B464E /* EnduranceTask.m in Sources */,
+				DC5C65E8151FBB14002F6BE5 /* DojoMainTableVC.m in Sources */,
+				DC5C65EC151FBE74002F6BE5 /* DojoDataManager.m in Sources */,
+				DC5C65FA151FFEC8002F6BE5 /* AbstractEntry.m in Sources */,
+				DC5C6600151FFEE5002F6BE5 /* EnduranceTask.m in Sources */,
+				DC5C6603151FFEF4002F6BE5 /* Goal.m in Sources */,
+				DC5C6606151FFF01002F6BE5 /* Subject.m in Sources */,
+				DC5C6609151FFF0A002F6BE5 /* TrainingTask.m in Sources */,
+				DC5C660C152005D4002F6BE5 /* BasicTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

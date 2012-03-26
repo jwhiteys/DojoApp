@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class DojoMainTableVC, DojoDataManager;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) DojoMainTableVC *mainViewController;
+@property (strong, nonatomic) DojoDataManager *dataManager;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
