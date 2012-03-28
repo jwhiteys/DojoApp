@@ -7,24 +7,72 @@
 //
 
 #import "AppDelegate.h"
+#import "DojoMainTableVC.h"
+#import "DojoDataManager.h"
+#import "DojoDetailVC_iPad.h"
+#import "DojoMainTableVC_iPad.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize dataManager=_dataManager;
-@synthesize mainViewController=_mainViewController;
+@synthesize navigationController=_navigationController;
+@synthesize splitViewController=_splitViewController;
+
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //DataManager starts
+    self.dataManager = [DojoDataManager sharedInstance];
+    BOOL yesOrNo = [DojoDataManager sharedInstanceExists];
+    NSLog(@"Shared Instance Exists: %s", yesOrNo ? "true" : "false");
+    self.dataManager.managedObjectContext = self.managedObjectContext;
     
-    // Override point for customization after application launch.
+    //UI based on UIUserInterfaceIdiom...
+    if ([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
 
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        //rootVC's for the iphone...
+        DojoMainTableVC *phoneMainTVC = [[DojoMainTableVC alloc] initWithStyle:UITableViewStylePlain];
+        self.navigationController = [[UINavigationController alloc] initWithRootViewController:phoneMainTVC];
+        [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+        [self.navigationController setToolbarHidden:NO];
+        [self.navigationController.toolbar setBarStyle:UIBarStyleBlackTranslucent];
+        
+        //add rootVCs to window
+        self.window.rootViewController = self.navigationController;
+        
+        //add reference to MOC in mainVC
+        phoneMainTVC.managedObjectContext = self.managedObjectContext;
+        phoneMainTVC.dataManager = self.dataManager;
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    } else {
+        //*iPad UI*
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        //initialize iPad View;
+        self.splitViewController = [[UISplitViewController alloc] init];
+        DojoDetailVC_iPad *detailVC = [[DojoDetailVC_iPad alloc] init];
+        DojoMainTableVC_iPad *mainTVC = [[DojoMainTableVC_iPad alloc] initWithStyle:UITableViewStylePlain];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainTVC];
+        navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+        [navigationController.navigationBar setHidden:NO];
+        UINavigationController *anotherNavCon = [[UINavigationController alloc] initWithRootViewController:detailVC];
+        anotherNavCon.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+        self.splitViewController.viewControllers = [NSArray arrayWithObjects:navigationController, anotherNavCon, nil];
+        
+        //add to window root VC
+        self.window.rootViewController = self.splitViewController;
+        
+        //add reference to MOC in the mainVC...
+        mainTVC.managedObjectContext = self.managedObjectContext;
+        mainTVC.dataManager = self.dataManager;
+    }
+    
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -14,8 +14,11 @@
 @interface DojoMainTableVC : UITableViewController
 
 //core data reference
-@property (weak, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 //DojoDataManagerReference
-@property (weak, nonatomic) DojoDataManager *dataManager;
+@property (strong, nonatomic) DojoDataManager *dataManager;
+//weak reference to the parentNavigationController
+@property (weak, nonatomic) UINavigationController *navigationController;
 
 @end

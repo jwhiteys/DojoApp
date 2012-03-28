@@ -21,8 +21,9 @@
 @property (weak, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
-//access to the DataManager Singleton - calls init
-+(id)sharedDataManager;
+//access to the DataManager Singleton - calls init  USE SHARED INSTANCE TO ACCESS THE DATA CONTROLLER;
++(id)sharedInstance;
++(BOOL)sharedInstanceExists;
 
 //SUBJECTS - create, read, update, delete
 //*C*

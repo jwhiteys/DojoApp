@@ -18,6 +18,8 @@
 
 @implementation DojoDataManager
 
+static DojoDataManager __strong *sharedInstance = nil;
+
 @synthesize goalList=_goalList;
 @synthesize subjectList=_subjectList;
 @synthesize taskList=_taskList;
@@ -25,22 +27,30 @@
 @synthesize managedObjectContext=_managedObjectContext;
 @synthesize fetchedResultsController=_fetchedResultsController;
 
--(id)init
++(DojoDataManager *)sharedInstance
 {
-    if(self = [super init]){
-        //custom data manager initialization here
-        //this class should be singleton
-        self.goalList = [[NSMutableArray alloc] init];
-        self.subjectList = [[NSMutableArray alloc] init];
-        self.taskList = [[NSMutableArray alloc] init];
-        self.masterEntryCollection = [[NSMutableDictionary alloc] init];
-        self.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-        self.fetchedResultsController = [[NSFetchedResultsController alloc] init];
-        
-        return self;
+    if (!sharedInstance) {
+        sharedInstance = [[[self class] alloc] init];
+        NSLog(@"Creating subject, goal, and task lists");
+        sharedInstance.goalList = [[NSMutableArray alloc] init];
+        sharedInstance.subjectList = [[NSMutableArray alloc] init];
+        sharedInstance.taskList = [[NSMutableArray alloc] init];
+        sharedInstance.masterEntryCollection = [[NSMutableDictionary alloc] init];
+        sharedInstance.managedObjectContext = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
+        sharedInstance.fetchedResultsController = [[NSFetchedResultsController alloc] init];
+        NSLog(@"DataManager created");
     }
-    return nil;
+    return sharedInstance;
 }
+
++(BOOL)sharedInstanceExists
+{
+    if (!sharedInstance) {
+        return NO;
+    }
+    else return YES;
+}
+
 
 
 

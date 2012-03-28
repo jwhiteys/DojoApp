@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC01969715213A4000DB795D /* DojoDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC01969615213A4000DB795D /* DojoDetailVC.m */; };
+		DC01969E15213A6800DB795D /* DojoTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC01969D15213A6800DB795D /* DojoTimerVC.m */; };
+		DC0196A115213ABB00DB795D /* DojoAddTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0196A015213ABB00DB795D /* DojoAddTaskVC.m */; };
+		DC352D3E15200A320098AA45 /* BasicTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC352D3D15200A320098AA45 /* BasicTask.m */; };
 		DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2AE151EC18200C8EF16 /* UIKit.framework */; };
 		DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B0151EC18200C8EF16 /* Foundation.framework */; };
 		DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */; };
@@ -23,10 +27,24 @@
 		DC5C6603151FFEF4002F6BE5 /* Goal.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6602151FFEF4002F6BE5 /* Goal.m */; };
 		DC5C6606151FFF01002F6BE5 /* Subject.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6605151FFF01002F6BE5 /* Subject.m */; };
 		DC5C6609151FFF0A002F6BE5 /* TrainingTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */; };
-		DC5C660C152005D4002F6BE5 /* BasicTask.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C660B152005D4002F6BE5 /* BasicTask.m */; };
+		DC72A9BC1521DCFA007E7A9F /* YinYangButtonSmall@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC72A9BA1521DCFA007E7A9F /* YinYangButtonSmall@2x.png */; };
+		DC72A9BD1521DCFA007E7A9F /* YinYangButtonSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = DC72A9BB1521DCFA007E7A9F /* YinYangButtonSmall.png */; };
+		DC72DD8515228DD100159985 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC72DD8415228DD100159985 /* CoreLocation.framework */; };
+		DC72DD891522991200159985 /* DojoMainTableVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD881522991200159985 /* DojoMainTableVC_iPad.m */; };
+		DC72DD8C1522992F00159985 /* DojoDetailVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD8B1522992F00159985 /* DojoDetailVC_iPad.m */; };
+		DC72DD8F1522994400159985 /* DojoTimerVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */; };
+		DC72DD921522995B00159985 /* DojoAddTaskVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD911522995B00159985 /* DojoAddTaskVC_iPad.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC01969515213A4000DB795D /* DojoDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoDetailVC.h; sourceTree = "<group>"; };
+		DC01969615213A4000DB795D /* DojoDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoDetailVC.m; sourceTree = "<group>"; };
+		DC01969C15213A6800DB795D /* DojoTimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoTimerVC.h; sourceTree = "<group>"; };
+		DC01969D15213A6800DB795D /* DojoTimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoTimerVC.m; sourceTree = "<group>"; };
+		DC01969F15213ABB00DB795D /* DojoAddTaskVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoAddTaskVC.h; sourceTree = "<group>"; };
+		DC0196A015213ABB00DB795D /* DojoAddTaskVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoAddTaskVC.m; sourceTree = "<group>"; };
+		DC352D3C15200A320098AA45 /* BasicTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicTask.h; sourceTree = "<group>"; };
+		DC352D3D15200A320098AA45 /* BasicTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicTask.m; sourceTree = "<group>"; };
 		DC44D2AA151EC18200C8EF16 /* Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dojo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC44D2AE151EC18200C8EF16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DC44D2B0151EC18200C8EF16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,8 +72,17 @@
 		DC5C6605151FFF01002F6BE5 /* Subject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Subject.m; sourceTree = "<group>"; };
 		DC5C6607151FFF0A002F6BE5 /* TrainingTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainingTask.h; sourceTree = "<group>"; };
 		DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainingTask.m; sourceTree = "<group>"; };
-		DC5C660A152005D4002F6BE5 /* BasicTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BasicTask.h; path = ../BasicTask.h; sourceTree = "<group>"; };
-		DC5C660B152005D4002F6BE5 /* BasicTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BasicTask.m; path = ../BasicTask.m; sourceTree = "<group>"; };
+		DC72A9BA1521DCFA007E7A9F /* YinYangButtonSmall@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "YinYangButtonSmall@2x.png"; path = "../../YinYangButtonSmall@2x.png"; sourceTree = "<group>"; };
+		DC72A9BB1521DCFA007E7A9F /* YinYangButtonSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YinYangButtonSmall.png; path = ../../YinYangButtonSmall.png; sourceTree = "<group>"; };
+		DC72DD8415228DD100159985 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DC72DD871522991200159985 /* DojoMainTableVC_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoMainTableVC_iPad.h; sourceTree = "<group>"; };
+		DC72DD881522991200159985 /* DojoMainTableVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoMainTableVC_iPad.m; sourceTree = "<group>"; };
+		DC72DD8A1522992F00159985 /* DojoDetailVC_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoDetailVC_iPad.h; sourceTree = "<group>"; };
+		DC72DD8B1522992F00159985 /* DojoDetailVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoDetailVC_iPad.m; sourceTree = "<group>"; };
+		DC72DD8D1522994400159985 /* DojoTimerVC_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoTimerVC_iPad.h; sourceTree = "<group>"; };
+		DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoTimerVC_iPad.m; sourceTree = "<group>"; };
+		DC72DD901522995B00159985 /* DojoAddTaskVC_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoAddTaskVC_iPad.h; sourceTree = "<group>"; };
+		DC72DD911522995B00159985 /* DojoAddTaskVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoAddTaskVC_iPad.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC72DD8515228DD100159985 /* CoreLocation.framework in Frameworks */,
 				DC44D2AF151EC18200C8EF16 /* UIKit.framework in Frameworks */,
 				DC44D2B1151EC18200C8EF16 /* Foundation.framework in Frameworks */,
 				DC44D2B3151EC18200C8EF16 /* CoreGraphics.framework in Frameworks */,
@@ -93,6 +121,7 @@
 		DC44D2AD151EC18200C8EF16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC72DD8415228DD100159985 /* CoreLocation.framework */,
 				DC44D2AE151EC18200C8EF16 /* UIKit.framework */,
 				DC44D2B0151EC18200C8EF16 /* Foundation.framework */,
 				DC44D2B2151EC18200C8EF16 /* CoreGraphics.framework */,
@@ -115,6 +144,8 @@
 		DC44D2B7151EC18200C8EF16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DC72A9BA1521DCFA007E7A9F /* YinYangButtonSmall@2x.png */,
+				DC72A9BB1521DCFA007E7A9F /* YinYangButtonSmall.png */,
 				DC5C65F1151FC725002F6BE5 /* DojoConfig.plist */,
 				DC44D2B8151EC18200C8EF16 /* Dojo-Info.plist */,
 				DC44D2B9151EC18200C8EF16 /* InfoPlist.strings */,
@@ -127,9 +158,9 @@
 		DC44D2CA151EC21000C8EF16 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DC5C660A152005D4002F6BE5 /* BasicTask.h */,
-				DC5C660B152005D4002F6BE5 /* BasicTask.m */,
 				DC44D2C2151EC18200C8EF16 /* DojoApp.xcdatamodeld */,
+				DC352D3C15200A320098AA45 /* BasicTask.h */,
+				DC352D3D15200A320098AA45 /* BasicTask.m */,
 				DC5C6607151FFF0A002F6BE5 /* TrainingTask.h */,
 				DC5C6608151FFF0A002F6BE5 /* TrainingTask.m */,
 				DC5C6604151FFF01002F6BE5 /* Subject.h */,
@@ -151,8 +182,15 @@
 			children = (
 				DC44D2BF151EC18200C8EF16 /* AppDelegate.h */,
 				DC44D2C0151EC18200C8EF16 /* AppDelegate.m */,
+				DC72DD86152298DE00159985 /* iPad Controllers */,
 				DC5C65E6151FBB14002F6BE5 /* DojoMainTableVC.h */,
 				DC5C65E7151FBB14002F6BE5 /* DojoMainTableVC.m */,
+				DC01969515213A4000DB795D /* DojoDetailVC.h */,
+				DC01969615213A4000DB795D /* DojoDetailVC.m */,
+				DC01969F15213ABB00DB795D /* DojoAddTaskVC.h */,
+				DC0196A015213ABB00DB795D /* DojoAddTaskVC.m */,
+				DC01969C15213A6800DB795D /* DojoTimerVC.h */,
+				DC01969D15213A6800DB795D /* DojoTimerVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +200,21 @@
 			children = (
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		DC72DD86152298DE00159985 /* iPad Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC72DD871522991200159985 /* DojoMainTableVC_iPad.h */,
+				DC72DD881522991200159985 /* DojoMainTableVC_iPad.m */,
+				DC72DD8A1522992F00159985 /* DojoDetailVC_iPad.h */,
+				DC72DD8B1522992F00159985 /* DojoDetailVC_iPad.m */,
+				DC72DD901522995B00159985 /* DojoAddTaskVC_iPad.h */,
+				DC72DD911522995B00159985 /* DojoAddTaskVC_iPad.m */,
+				DC72DD8D1522994400159985 /* DojoTimerVC_iPad.h */,
+				DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */,
+			);
+			name = "iPad Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +269,8 @@
 			files = (
 				DC44D2BB151EC18200C8EF16 /* InfoPlist.strings in Resources */,
 				DC5C65F2151FC725002F6BE5 /* DojoConfig.plist in Resources */,
+				DC72A9BC1521DCFA007E7A9F /* YinYangButtonSmall@2x.png in Resources */,
+				DC72A9BD1521DCFA007E7A9F /* YinYangButtonSmall.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +291,14 @@
 				DC5C6603151FFEF4002F6BE5 /* Goal.m in Sources */,
 				DC5C6606151FFF01002F6BE5 /* Subject.m in Sources */,
 				DC5C6609151FFF0A002F6BE5 /* TrainingTask.m in Sources */,
-				DC5C660C152005D4002F6BE5 /* BasicTask.m in Sources */,
+				DC352D3E15200A320098AA45 /* BasicTask.m in Sources */,
+				DC01969715213A4000DB795D /* DojoDetailVC.m in Sources */,
+				DC01969E15213A6800DB795D /* DojoTimerVC.m in Sources */,
+				DC0196A115213ABB00DB795D /* DojoAddTaskVC.m in Sources */,
+				DC72DD891522991200159985 /* DojoMainTableVC_iPad.m in Sources */,
+				DC72DD8C1522992F00159985 /* DojoDetailVC_iPad.m in Sources */,
+				DC72DD8F1522994400159985 /* DojoTimerVC_iPad.m in Sources */,
+				DC72DD921522995B00159985 /* DojoAddTaskVC_iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

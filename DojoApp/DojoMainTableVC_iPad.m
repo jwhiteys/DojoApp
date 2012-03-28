@@ -1,28 +1,25 @@
 //
-//  DojoMainTableVC.m
+//  DojoMainTableVC_iPad.m
 //  Dojo
 //
-//  Created by Justin Skweres on 3/25/12.
+//  Created by Justin Skweres on 3/27/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "DojoMainTableVC.h"
+#import "DojoMainTableVC_iPad.h"
 
+@implementation DojoMainTableVC_iPad
 
-@implementation DojoMainTableVC
-
-@synthesize dataManager=_dataManager;
-@synthesize navigationController=_navigationController;
-@synthesize fetchedResultsController=_fetchedResultsController;
+@synthesize splitViewController=_splitViewController;
 @synthesize managedObjectContext=_managedObjectContext;
+@synthesize detailViewController=_detailViewController;
+@synthesize dataManager=_dataManager;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        //customization needed?
-        self.tableView.delegate = self;
-        self.tableView.dataSource = self;
+        // Custom initialization
     }
     return self;
 }
@@ -41,16 +38,7 @@
 {
     [super viewDidLoad];
     self.title = @"Dojo";
-    
-    //set up toolBar and button...
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *yinYangButton = [[UIBarButtonItem alloc] 
-                                      initWithImage:[UIImage imageNamed:@"YinYangButtonSmall.png"] 
-                                      style:UIBarButtonItemStylePlain target:self 
-                                      action:@selector(yinYangButton:)];
-    self.toolbarItems = [[NSArray alloc] initWithObjects:flexibleSpaceLeft, yinYangButton, flexibleSpaceRight, nil];
-    
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -60,10 +48,7 @@
 
 - (void)viewDidUnload
 {
-    [self setDataManager:nil];
-    [self setNavigationController:nil];
-    [self setFetchedResultsController:nil];
-    [self setManagedObjectContext:nil];
+    [self setSplitViewController:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -92,7 +77,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return YES;
 }
 
 #pragma mark - Table view data source
