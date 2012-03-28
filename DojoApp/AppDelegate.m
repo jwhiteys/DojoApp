@@ -36,7 +36,7 @@
 
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         //rootVC's for the iphone...
-        DojoMainTableVC *phoneMainTVC = [[DojoMainTableVC alloc] initWithStyle:UITableViewStylePlain];
+        DojoMainTableVC *phoneMainTVC = [[DojoMainTableVC alloc] initWithStyle:UITableViewStyleGrouped];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:phoneMainTVC];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
         [self.navigationController setToolbarHidden:NO];
@@ -56,13 +56,14 @@
         //initialize iPad View;
         self.splitViewController = [[UISplitViewController alloc] init];
         DojoDetailVC_iPad *detailVC = [[DojoDetailVC_iPad alloc] init];
-        DojoMainTableVC_iPad *mainTVC = [[DojoMainTableVC_iPad alloc] initWithStyle:UITableViewStylePlain];
+        DojoMainTableVC_iPad *mainTVC = [[DojoMainTableVC_iPad alloc] initWithStyle:UITableViewStyleGrouped];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainTVC];
         navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
         [navigationController.navigationBar setHidden:NO];
         UINavigationController *anotherNavCon = [[UINavigationController alloc] initWithRootViewController:detailVC];
         anotherNavCon.navigationBar.barStyle = UIBarStyleBlackTranslucent;
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:navigationController, anotherNavCon, nil];
+        self.splitViewController.delegate = detailVC;
         
         //add to window root VC
         self.window.rootViewController = self.splitViewController;
@@ -72,7 +73,7 @@
         mainTVC.dataManager = self.dataManager;
     }
     
-    self.window.backgroundColor = [UIColor blackColor];
+    self.window.backgroundColor = [UIColor grayColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

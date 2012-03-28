@@ -10,4 +10,9 @@
 
 @interface DojoDetailVC_iPad : UIViewController <UISplitViewControllerDelegate>
 
+@property (strong, nonatomic) UIPopoverController *popover;
+@property (strong, nonatomic) UIBarButtonItem *mainListBarButton;
+
+-(void)displayMainPopover:(id)sender;
+
 @end

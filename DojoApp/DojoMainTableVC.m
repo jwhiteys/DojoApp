@@ -7,6 +7,7 @@
 //
 
 #import "DojoMainTableVC.h"
+#import "DojoDataManager.h"
 
 
 @implementation DojoMainTableVC
@@ -41,6 +42,16 @@
 {
     [super viewDidLoad];
     self.title = @"Dojo";
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:
+                                      CGRectMake(0, 0, 320, 20)];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:
+                                      CGRectMake(440, 440, 320, 20)];
+   
+   //NEXT TASK IS TO BE ABLE TO ADD TASKS TO THE LIST AND SAVE TO CONTEXT... IMPLEMENT TASK SAVING
+    //WITH LONG PRESS GESTURE ON THE UITABLEVIEW (OR CELLS THEREOF) TO SLIDE DOWN TO CREATE NEW CELL.
+    //?????????NO NEED FOR ADD TASK VC? WE'LL SEE....
+    //?????????GET RID OF BOTTOM BAR - KEEP AS MINIMALIST AS POSSIBLE WITHOUT BEING CONFUSING.
+    
     
     //set up toolBar and button...
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -101,14 +112,15 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (self.dataManager.goalList.count==0 && self.dataManager.subjectList.count==0)
+        return [self.dataManager.taskList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

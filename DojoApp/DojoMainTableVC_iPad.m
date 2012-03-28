@@ -38,7 +38,8 @@
 {
     [super viewDidLoad];
     self.title = @"Dojo";
-
+    //implement long hold on master view to add and insert a new task.
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -49,6 +50,9 @@
 - (void)viewDidUnload
 {
     [self setSplitViewController:nil];
+    [self setDataManager:nil];
+    [self setDetailViewController:nil];
+    [self setManagedObjectContext:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
