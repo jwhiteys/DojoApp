@@ -25,6 +25,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //get window
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     //DataManager starts
     self.dataManager = [DojoDataManager sharedInstance];
     BOOL yesOrNo = [DojoDataManager sharedInstanceExists];
@@ -34,9 +37,8 @@
     //UI based on UIUserInterfaceIdiom...
     if ([[UIDevice currentDevice] userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
 
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         //rootVC's for the iphone...
-        DojoMainTableVC *phoneMainTVC = [[DojoMainTableVC alloc] initWithStyle:UITableViewStyleGrouped];
+        DojoMainTableVC *phoneMainTVC = [[DojoMainTableVC alloc] initWithStyle:UITableViewStylePlain];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:phoneMainTVC];
         [self.navigationController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
         [self.navigationController setToolbarHidden:NO];
@@ -51,15 +53,14 @@
     
     } else {
         //*iPad UI*
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         //initialize iPad View;
         self.splitViewController = [[UISplitViewController alloc] init];
         DojoDetailVC_iPad *detailVC = [[DojoDetailVC_iPad alloc] init];
-        DojoMainTableVC_iPad *mainTVC = [[DojoMainTableVC_iPad alloc] initWithStyle:UITableViewStyleGrouped];
+        DojoMainTableVC_iPad *mainTVC = [[DojoMainTableVC_iPad alloc] initWithStyle:UITableViewStylePlain];
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainTVC];
         navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-        [navigationController.navigationBar setHidden:NO];
+        [navigationController setToolbarHidden:YES];
         UINavigationController *anotherNavCon = [[UINavigationController alloc] initWithRootViewController:detailVC];
         anotherNavCon.navigationBar.barStyle = UIBarStyleBlackTranslucent;
         self.splitViewController.viewControllers = [NSArray arrayWithObjects:navigationController, anotherNavCon, nil];

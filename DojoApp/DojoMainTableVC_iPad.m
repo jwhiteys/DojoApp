@@ -7,10 +7,12 @@
 //
 
 #import "DojoMainTableVC_iPad.h"
+#import "DojoDetailVC_iPad.h"
+#import "DojoDataManager.h"
 
 @implementation DojoMainTableVC_iPad
 
-@synthesize splitViewController=_splitViewController;
+//@synthesize splitViewController=_splitViewController;
 @synthesize managedObjectContext=_managedObjectContext;
 @synthesize detailViewController=_detailViewController;
 @synthesize dataManager=_dataManager;
@@ -38,6 +40,11 @@
 {
     [super viewDidLoad];
     self.title = @"Dojo";
+    /*
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:
+    CGRectMake(0, 0, 320, 20)];
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:
+                                      CGRectMake(460, 460, 320, 20)];
     //implement long hold on master view to add and insert a new task.
     
     // Uncomment the following line to preserve selection between presentations.
@@ -45,11 +52,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     */
 }
 
 - (void)viewDidUnload
 {
-    [self setSplitViewController:nil];
     [self setDataManager:nil];
     [self setDetailViewController:nil];
     [self setManagedObjectContext:nil];
@@ -90,14 +97,14 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.dataManager.taskList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,8 +115,15 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
     // Configure the cell...
+    cell.textLabel.text = [self.dataManager.taskList objectAtIndex:indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:20.0];
+    cell.textLabel.textAlignment = UITextAlignmentLeft;
+    cell.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight);
+    
+    if (self.dataManager.taskList.count == 0) {
+        cell.textLabel.text = @"Press and Hold To Prepare a Task";
+    }
     
     return cell;
 }

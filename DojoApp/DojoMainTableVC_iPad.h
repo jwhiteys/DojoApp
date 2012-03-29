@@ -12,7 +12,7 @@
 
 @interface DojoMainTableVC_iPad : UITableViewController
 
-@property (strong, nonatomic) UISplitViewController  *splitViewController;
+//@property (strong, nonatomic) UISplitViewController  *splitViewController;
 @property (strong, nonatomic) DojoDetailVC *detailViewController;
 @property (strong, nonatomic) DojoDataManager *dataManager;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

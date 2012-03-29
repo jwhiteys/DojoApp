@@ -21,4 +21,12 @@
 //weak reference to the parentNavigationController
 @property (weak, nonatomic) UINavigationController *navigationController;
 
+-(void)addNewTableViewRow:(id)sender;
+
+-(void)displaySubjects:(id)sender;
+
+-(void)displayGoals:(id)sender;
+
+-(void)displayTasks:(id)sender;
+
 @end

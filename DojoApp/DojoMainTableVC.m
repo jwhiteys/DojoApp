@@ -10,6 +10,18 @@
 #import "DojoDataManager.h"
 
 
+//Implement a DojoColorSchemeManager to return an array of 3 color objects (trichrome color schemes)
+typedef enum {
+    DojoColorSchemeDefaultBlack,
+    DojoColorSchemeRed,
+    DojoColorSchemeBlue,
+    DojoColorSchemeMetallic,
+    DojoColorSchemeWhite,
+    DojoColorSchemeMidnight,
+    DojoColorSchemeGreen
+} DojoColorScheme;
+
+
 @implementation DojoMainTableVC
 
 @synthesize dataManager=_dataManager;
@@ -46,27 +58,68 @@
                                       CGRectMake(0, 0, 320, 20)];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:
                                       CGRectMake(440, 440, 320, 20)];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1];
    
    //NEXT TASK IS TO BE ABLE TO ADD TASKS TO THE LIST AND SAVE TO CONTEXT... IMPLEMENT TASK SAVING
     //WITH LONG PRESS GESTURE ON THE UITABLEVIEW (OR CELLS THEREOF) TO SLIDE DOWN TO CREATE NEW CELL.
     //?????????NO NEED FOR ADD TASK VC? WE'LL SEE....
     //?????????GET RID OF BOTTOM BAR - KEEP AS MINIMALIST AS POSSIBLE WITHOUT BEING CONFUSING.
     
+    UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(addNewTableViewRow:)];
+    [self.tableView addGestureRecognizer:longPress];
+    
     
     //set up toolBar and button...
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                                       target:nil action:nil];
+    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
+                                                                                        target:nil action:nil];
+    NSString *segItem1 = [NSString stringWithFormat:@"Subjects"];
+    NSString *segItem2 = [NSString stringWithFormat:@"Goals"];
+    NSString *segItem3 = [NSString stringWithFormat:@"Tasks"];
+    NSArray *segArray = [[NSArray alloc] initWithObjects:segItem1, segItem2, segItem3, nil];
+    UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segArray];
+    segmentedControl.tintColor = [UIColor blackColor];
+    [segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
+    [segmentedControl setMomentary:NO];
+    UIBarButtonItem *segBarItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
+    
+    self.toolbarItems = [[NSArray alloc] initWithObjects:flexibleSpaceLeft, segBarItem, flexibleSpaceRight, nil];
+    
+    /*      WILL IMPLEMENT A SEGMENTED CONTROL AT BOTTOM
     UIBarButtonItem *yinYangButton = [[UIBarButtonItem alloc] 
                                       initWithImage:[UIImage imageNamed:@"YinYangButtonSmall.png"] 
                                       style:UIBarButtonItemStylePlain target:self 
                                       action:@selector(yinYangButton:)];
     self.toolbarItems = [[NSArray alloc] initWithObjects:flexibleSpaceLeft, yinYangButton, flexibleSpaceRight, nil];
+     */
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)addNewTableViewRow:(id)sender
+{
+    //implement
+    NSLog(@"Long Press Detected - trying to add new row...");
+}
+
+-(void)displaySubjects:(id)sender
+{
+                                   
+}
+
+-(void)displayGoals:(id)sender
+{
+    
+}
+
+-(void)displayTasks:(id)sender
+{
+    
 }
 
 - (void)viewDidUnload
@@ -119,20 +172,32 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
+    if (self.dataManager.taskList.count == 0) {
+        return 1;
+    }
     if (self.dataManager.goalList.count==0 && self.dataManager.subjectList.count==0)
         return [self.dataManager.taskList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    NSLog(@"UITableViewDelegate called - tableview cellForRowAtIndexPath:");
+    static NSString *CellIdentifier = @"TaskCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.textLabel.font = [UIFont systemFontOfSize:16.0];
+            cell.textLabel.textAlignment = UITextAlignmentLeft;
+            cell.textLabel.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight);
+        
     }
     
-    // Configure the cell...
+    // Configure the cell..
+    if (self.dataManager.taskList.count == 0) {
+        cell.textLabel.text = @"Press and Hold To Prepare a New Task";
+    }
     
     return cell;
 }

@@ -48,11 +48,13 @@
                             //pull from whatever the detail view is showing (subject, goal, or task title)
                             //FIX THIS...
     self.view.backgroundColor = [UIColor grayColor];
-    self.popover = [[UIPopoverController alloc] initWithContentViewController:
-                            [[[(AppDelegate *)[[UIApplication sharedApplication] delegate] splitViewController] viewControllers] objectAtIndex:0]];
+    
+    //make the bar button that holds popover in portrait.
     self.mainListBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayMainPopover:)];
     if (UIInterfaceOrientationPortrait | UIInterfaceOrientationPortraitUpsideDown) {
         self.navigationItem.leftBarButtonItem = self.mainListBarButton;
+    } else {
+        self.navigationItem.leftBarButtonItem = nil;
     }
 }
 
@@ -74,17 +76,21 @@
 
 #pragma mark - UISplitViewControllerDelegate Protocol Methods
 
+
 -(void)splitViewController:(UISplitViewController *)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)pc
 {
     NSLog(@"Rotating to Portrait - will call splitVC delegate method...");
     self.navigationItem.leftBarButtonItem = self.mainListBarButton;
+    self.popover = pc;
 }
 
 -(void)splitViewController:(UISplitViewController *)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
     NSLog(@"Rotating to Landscape - trying to invalidate button/popover combination...");
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    [self.navigationItem setLeftBarButtonItem:nil animated:NO];
+    self.popover = nil;
 }
+
 
 -(void)displayMainPopover:(id)sender
 {
