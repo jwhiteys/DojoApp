@@ -10,4 +10,8 @@
 
 @interface DojoTimerVC : UIViewController
 
+
+//needs to update the location field of the task when the timer is called.  This
+////is because the task may be scheduled and saved, not started immediately.
+
 @end

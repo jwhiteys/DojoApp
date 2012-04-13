@@ -22,6 +22,7 @@
 @dynamic startTime;
 @dynamic usesQuants;
 @dynamic isCompleted;
+@dynamic isIncomplete;
 @dynamic goal;
 
 @end

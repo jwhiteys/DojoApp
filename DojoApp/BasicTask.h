@@ -24,6 +24,8 @@
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSNumber * usesQuants;
 @property (nonatomic, retain) NSNumber * isCompleted;
+@property (nonatomic, retain) NSNumber * isIncomplete;
 @property (nonatomic, retain) Goal *goal;
+
 
 @end

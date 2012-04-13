@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "DojoAddTaskVC.h"
 
 @class DojoDataManager;
 
-@interface DojoMainTableVC : UITableViewController
+@interface DojoMainTableVC : UITableViewController <DojoAddTaskVCDelegate>
 
 //core data reference
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
@@ -21,7 +22,7 @@
 //weak reference to the parentNavigationController
 @property (weak, nonatomic) UINavigationController *navigationController;
 
--(void)addNewTableViewRow:(id)sender;
+-(void)longPressToAddNewTask:(id)sender;
 
 -(void)displaySubjects:(id)sender;
 

@@ -12,6 +12,17 @@
 #import "DojoDetailVC_iPad.h"
 #import "DojoMainTableVC_iPad.h"
 
+//Implement a DojoColorSchemeManager to return an array of 5 color objects (trichrome color schemes)
+typedef enum {
+    DojoColorSchemeBlack,
+    DojoColorSchemeRed,
+    DojoColorSchemeBlue,
+    DojoColorSchemeMetallic,
+    DojoColorSchemeWhite,
+    DojoColorSchemeMidnight,
+    DojoColorSchemeGreen
+} DojoColorScheme;
+
 @implementation AppDelegate
 
 @synthesize window = _window;

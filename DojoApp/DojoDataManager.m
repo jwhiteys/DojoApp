@@ -24,6 +24,7 @@ static DojoDataManager __strong *sharedInstance = nil;
 @synthesize subjectList=_subjectList;
 @synthesize taskList=_taskList;
 @synthesize masterEntryCollection=_masterEntryCollection;
+@synthesize locationManager;
 @synthesize managedObjectContext=_managedObjectContext;
 @synthesize fetchedResultsController=_fetchedResultsController;
 
@@ -49,6 +50,17 @@ static DojoDataManager __strong *sharedInstance = nil;
         return NO;
     }
     else return YES;
+}
+
+-(CLLocationManager *)locationManager
+{
+    if (locationManager != nil) {
+        return locationManager;
+    }
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    [locationManager startMonitoringSignificantLocationChanges];
+    return locationManager;
 }
 
 

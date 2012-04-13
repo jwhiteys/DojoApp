@@ -8,15 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class Subject, Goal, TrainingTask, EnduranceTask, AbstractEntry, BasicTask;
 
-@interface DojoDataManager : NSObject
+@interface DojoDataManager : NSObject  <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *subjectList;
 @property (strong, nonatomic) NSMutableArray *goalList;
 @property (strong, nonatomic) NSMutableArray *taskList;
 @property (strong, nonatomic) NSMutableDictionary *masterEntryCollection;
+
+//locationManager
+@property (strong, nonatomic) CLLocationManager *locationManager;
 //core data link
 @property (weak, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

@@ -34,6 +34,10 @@
 		DC72DD8C1522992F00159985 /* DojoDetailVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD8B1522992F00159985 /* DojoDetailVC_iPad.m */; };
 		DC72DD8F1522994400159985 /* DojoTimerVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */; };
 		DC72DD921522995B00159985 /* DojoAddTaskVC_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = DC72DD911522995B00159985 /* DojoAddTaskVC_iPad.m */; };
+		DCB758B715387A2800923C63 /* TimerButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB758B515387A2800923C63 /* TimerButton.png */; };
+		DCB758B815387A2800923C63 /* TimerButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB758B615387A2800923C63 /* TimerButton@2x.png */; };
+		DCF6C692153518D800D84609 /* YinYang.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6C690153518D800D84609 /* YinYang.png */; };
+		DCF6C693153518D800D84609 /* Timer.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6C691153518D800D84609 /* Timer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +87,10 @@
 		DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoTimerVC_iPad.m; sourceTree = "<group>"; };
 		DC72DD901522995B00159985 /* DojoAddTaskVC_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DojoAddTaskVC_iPad.h; sourceTree = "<group>"; };
 		DC72DD911522995B00159985 /* DojoAddTaskVC_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DojoAddTaskVC_iPad.m; sourceTree = "<group>"; };
+		DCB758B515387A2800923C63 /* TimerButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TimerButton.png; path = ../../TimerButton.png; sourceTree = "<group>"; };
+		DCB758B615387A2800923C63 /* TimerButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TimerButton@2x.png"; path = "../../TimerButton@2x.png"; sourceTree = "<group>"; };
+		DCF6C690153518D800D84609 /* YinYang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = YinYang.png; path = ../../../Downloads/YinYang.png; sourceTree = "<group>"; };
+		DCF6C691153518D800D84609 /* Timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Timer.png; path = ../../../Downloads/Timer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +141,9 @@
 		DC44D2B6151EC18200C8EF16 /* DojoApp */ = {
 			isa = PBXGroup;
 			children = (
+				DCF6C68F15350F5600D84609 /* Data Controllers */,
 				DC44D2CC151EC21700C8EF16 /* Views */,
-				DC44D2CB151EC21300C8EF16 /* Controllers */,
+				DC44D2CB151EC21300C8EF16 /* View Controllers */,
 				DC44D2CA151EC21000C8EF16 /* Models */,
 				DC44D2B7151EC18200C8EF16 /* Supporting Files */,
 			);
@@ -144,6 +153,10 @@
 		DC44D2B7151EC18200C8EF16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DCB758B515387A2800923C63 /* TimerButton.png */,
+				DCB758B615387A2800923C63 /* TimerButton@2x.png */,
+				DCF6C690153518D800D84609 /* YinYang.png */,
+				DCF6C691153518D800D84609 /* Timer.png */,
 				DC72A9BA1521DCFA007E7A9F /* YinYangButtonSmall@2x.png */,
 				DC72A9BB1521DCFA007E7A9F /* YinYangButtonSmall.png */,
 				DC5C65F1151FC725002F6BE5 /* DojoConfig.plist */,
@@ -171,13 +184,11 @@
 				DC5C65FF151FFEE5002F6BE5 /* EnduranceTask.m */,
 				DC5C65F8151FFEC8002F6BE5 /* AbstractEntry.h */,
 				DC5C65F9151FFEC8002F6BE5 /* AbstractEntry.m */,
-				DC5C65EA151FBE74002F6BE5 /* DojoDataManager.h */,
-				DC5C65EB151FBE74002F6BE5 /* DojoDataManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		DC44D2CB151EC21300C8EF16 /* Controllers */ = {
+		DC44D2CB151EC21300C8EF16 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DC44D2BF151EC18200C8EF16 /* AppDelegate.h */,
@@ -192,7 +203,7 @@
 				DC01969C15213A6800DB795D /* DojoTimerVC.h */,
 				DC01969D15213A6800DB795D /* DojoTimerVC.m */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		DC44D2CC151EC21700C8EF16 /* Views */ = {
@@ -215,6 +226,15 @@
 				DC72DD8E1522994400159985 /* DojoTimerVC_iPad.m */,
 			);
 			name = "iPad Controllers";
+			sourceTree = "<group>";
+		};
+		DCF6C68F15350F5600D84609 /* Data Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC5C65EA151FBE74002F6BE5 /* DojoDataManager.h */,
+				DC5C65EB151FBE74002F6BE5 /* DojoDataManager.m */,
+			);
+			name = "Data Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +291,10 @@
 				DC5C65F2151FC725002F6BE5 /* DojoConfig.plist in Resources */,
 				DC72A9BC1521DCFA007E7A9F /* YinYangButtonSmall@2x.png in Resources */,
 				DC72A9BD1521DCFA007E7A9F /* YinYangButtonSmall.png in Resources */,
+				DCF6C692153518D800D84609 /* YinYang.png in Resources */,
+				DCF6C693153518D800D84609 /* Timer.png in Resources */,
+				DCB758B715387A2800923C63 /* TimerButton.png in Resources */,
+				DCB758B815387A2800923C63 /* TimerButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

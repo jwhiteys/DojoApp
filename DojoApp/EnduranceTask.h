@@ -15,5 +15,6 @@
 
 @property (nonatomic, retain) NSNumber * isEnduranceTask;
 @property (nonatomic, retain) NSNumber * totalTime;
+@property (nonatomic, retain) NSNumber * successes;
 
 @end

@@ -13,5 +13,6 @@
 
 @dynamic isEnduranceTask;
 @dynamic totalTime;
+@dynamic successes;
 
 @end

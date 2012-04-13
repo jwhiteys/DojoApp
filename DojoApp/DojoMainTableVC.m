@@ -8,18 +8,7 @@
 
 #import "DojoMainTableVC.h"
 #import "DojoDataManager.h"
-
-
-//Implement a DojoColorSchemeManager to return an array of 3 color objects (trichrome color schemes)
-typedef enum {
-    DojoColorSchemeDefaultBlack,
-    DojoColorSchemeRed,
-    DojoColorSchemeBlue,
-    DojoColorSchemeMetallic,
-    DojoColorSchemeWhite,
-    DojoColorSchemeMidnight,
-    DojoColorSchemeGreen
-} DojoColorScheme;
+#import "DojoAddTaskVC.h"
 
 
 @implementation DojoMainTableVC
@@ -65,19 +54,17 @@ typedef enum {
     //?????????NO NEED FOR ADD TASK VC? WE'LL SEE....
     //?????????GET RID OF BOTTOM BAR - KEEP AS MINIMALIST AS POSSIBLE WITHOUT BEING CONFUSING.
     
-    UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(addNewTableViewRow:)];
+    UIGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressToAddNewTask:)];
     [self.tableView addGestureRecognizer:longPress];
     
     
     //set up toolBar and button...
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
-                                                                                       target:nil action:nil];
-    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
-                                                                                        target:nil action:nil];
+    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *flexibleSpaceRight = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     NSString *segItem1 = [NSString stringWithFormat:@"Subjects"];
     NSString *segItem2 = [NSString stringWithFormat:@"Goals"];
-    NSString *segItem3 = [NSString stringWithFormat:@"Tasks"];
-    NSArray *segArray = [[NSArray alloc] initWithObjects:segItem1, segItem2, segItem3, nil];
+    
+    NSArray *segArray = [[NSArray alloc] initWithObjects:segItem1, segItem2, nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segArray];
     segmentedControl.tintColor = [UIColor blackColor];
     [segmentedControl setSegmentedControlStyle:UISegmentedControlStyleBar];
@@ -99,27 +86,6 @@ typedef enum {
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
--(void)addNewTableViewRow:(id)sender
-{
-    //implement
-    NSLog(@"Long Press Detected - trying to add new row...");
-}
-
--(void)displaySubjects:(id)sender
-{
-                                   
-}
-
--(void)displayGoals:(id)sender
-{
-    
-}
-
--(void)displayTasks:(id)sender
-{
-    
 }
 
 - (void)viewDidUnload
@@ -159,6 +125,58 @@ typedef enum {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - DojoAddTaskVCDelegate Methods
+
+-(void)viewController:(UIViewController *)viewController didAddTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
+{
+    
+}
+
+-(void)viewController:(UIViewController *)viewController didCancelTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
+{
+    NSLog(@"Dismissing VC after pressing Cancel...");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)viewController:(UIViewController *)viewController didSaveTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
+{
+    
+}
+
+
+#pragma mark - UIKitTargetAction Methods
+//Target:Action methods for various UIKit Buttons
+
+//Add a new task in a particular area on the current table displayed
+-(void)longPressToAddNewTask:(id)sender
+{
+    //implement
+    NSLog(@"Long Press Detected - trying to add new row...");
+    
+    DojoAddTaskVC *addTaskController = [[DojoAddTaskVC alloc] init];
+    addTaskController.delegate = self;
+    UINavigationController *navContr = [[UINavigationController alloc] initWithRootViewController:addTaskController];
+    //[self presentModalViewController:navContr animated:YES];
+    [self presentViewController:navContr animated:YES completion:NULL];
+}
+
+//implement to show the relevent table cells when the respective segmented control is selected
+-(void)displaySubjects:(id)sender
+{
+    
+}
+
+-(void)displayGoals:(id)sender
+{
+    
+}
+
+-(void)displayTasks:(id)sender
+{
+    
+}
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -177,6 +195,7 @@ typedef enum {
     }
     if (self.dataManager.goalList.count==0 && self.dataManager.subjectList.count==0)
         return [self.dataManager.taskList count];
+    else return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -188,6 +207,7 @@ typedef enum {
     if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            
             cell.textLabel.font = [UIFont systemFontOfSize:16.0];
             cell.textLabel.textAlignment = UITextAlignmentLeft;
             cell.textLabel.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight);
