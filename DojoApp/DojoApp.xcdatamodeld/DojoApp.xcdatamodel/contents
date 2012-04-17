@@ -18,6 +18,7 @@
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="usesQuants" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="goal" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="tasks" inverseEntity="Goal" syncable="YES"/>
+        <relationship name="quant" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Quant" inverseName="task" inverseEntity="Quant" syncable="YES"/>
     </entity>
     <entity name="EnduranceTask" representedClassName="EnduranceTask" parentEntity="BasicTask" syncable="YES">
         <attribute name="isEnduranceTask" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -28,6 +29,11 @@
         <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="subject" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Subject" inverseName="goals" inverseEntity="Subject" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BasicTask" inverseName="goal" inverseEntity="BasicTask" syncable="YES"/>
+    </entity>
+    <entity name="Quant" representedClassName="Quant" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="task" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="BasicTask" inverseName="quant" inverseEntity="BasicTask" syncable="YES"/>
     </entity>
     <entity name="Subject" representedClassName="Subject" parentEntity="AbstractEntry" syncable="YES">
         <attribute name="score" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
@@ -40,9 +46,10 @@
     </entity>
     <elements>
         <element name="AbstractEntry" positionX="225" positionY="-99" width="153" height="120"/>
-        <element name="BasicTask" positionX="315" positionY="63" width="128" height="195"/>
+        <element name="BasicTask" positionX="315" positionY="63" width="128" height="210"/>
         <element name="EnduranceTask" positionX="468" positionY="195" width="128" height="90"/>
         <element name="Goal" positionX="135" positionY="87" width="128" height="75"/>
+        <element name="Quant" positionX="160" positionY="192" width="128" height="90"/>
         <element name="Subject" positionX="54" positionY="-9" width="128" height="60"/>
         <element name="TrainingTask" positionX="466" positionY="0" width="128" height="90"/>
     </elements>

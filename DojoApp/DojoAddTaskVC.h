@@ -36,7 +36,8 @@
 @property (nonatomic, strong) UIAlertView *quantAlertView;
 //choose that value's name if a value is to be incremented - can also choose from existing types 
 ////ask the data manager!
-@property (nonatomic, strong) UIAlertView *quantNameAlertView;
+@property (nonatomic, strong) UIAlertView *quantNameAlertView;  //choose old name or create new
+@property (nonatomic, strong) UIAlertView *quantNameEntryAlertView; //enter the new name.
 
 //properties to store data entered at the add screen - sent to MainVC (parent)
 @property (nonatomic) NSUInteger goalTimePickerHours;
@@ -53,6 +54,6 @@
 -(void)didAddNewTask:(id)sender;
 
 //save for later - file as incomplete...
--(void)didSaveNewTask:(id)sender;
+-(void)didSaveNewTask:(id)sender;           //SAVE BUTTON NEEDS IMPLEMENTATION!!!!!!!
 
 @end

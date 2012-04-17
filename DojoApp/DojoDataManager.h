@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSMutableArray *subjectList;
 @property (strong, nonatomic) NSMutableArray *goalList;
 @property (strong, nonatomic) NSMutableArray *taskList;
+@property (strong, nonatomic) NSMutableArray *quantDataTypes;   //will maybe need this to keep track ofthe different types and reuse / compare
 @property (strong, nonatomic) NSMutableDictionary *masterEntryCollection;
 
 //locationManager
@@ -77,7 +78,7 @@
 -(void)removeGoal:(Goal *)theGoal;
 
 //TASKS - CRUD
--(void)addNewTaskWithTitle:(NSString *)theTitle summary:(NSString *)theSummary isEndurance:(BOOL *)theBool;
+-(void)addNewTaskWithTitle:(NSString *)title summary:(NSString *)summary goalTimeInSeconds:(NSUInteger)goalTimeInSeconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName;
 
 -(BasicTask *)taskWithTitle:(NSString *)theTitle;
 -(BasicTask *)taskAtIndex:(NSInteger)theIndex;

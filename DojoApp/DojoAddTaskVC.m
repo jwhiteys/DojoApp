@@ -7,22 +7,19 @@
 //
 
 #import "DojoAddTaskVC.h"
-
-@interface DojoAddTaskVC()
-
--(void)displayTimerViewController;
-
-@end
+#import "DojoTimerVC.h"
+#import "DojoTableViewSelectionVC.h"
 
 @implementation DojoAddTaskVC
 
-@synthesize taskTitleTextField=_taskTitleTextField, taskSummaryTextField=_taskSummaryTextField, goalTimeLabel=_goalTimeLabel, goalTimePickerView=_goalTimePickerView, cancelButton=_cancelButton, timerButton=_timerButton, delegate=_delegate, enduranceLabel=_enduranceLabel, enduranceSwitch=_enduranceSwitch, saveButton=_saveButton, goalTimeInSeconds=_goalTimeInSeconds, goalTimePickerHours=_goalTimePickerHours, goalTimePickerMinutes=_goalTimePickerMinutes, quantAlertView=_quantAlertView, quantUnitType=_quantUnitType, quantsEnabled=_quantsEnabled, quantNameAlertView=_quantNameAlertView;
+@synthesize taskTitleTextField=_taskTitleTextField, taskSummaryTextField=_taskSummaryTextField, goalTimeLabel=_goalTimeLabel, goalTimePickerView=_goalTimePickerView, cancelButton=_cancelButton, timerButton=_timerButton, delegate=_delegate, enduranceLabel=_enduranceLabel, enduranceSwitch=_enduranceSwitch, saveButton=_saveButton, goalTimeInSeconds=_goalTimeInSeconds, goalTimePickerHours=_goalTimePickerHours, goalTimePickerMinutes=_goalTimePickerMinutes, quantAlertView=_quantAlertView, quantUnitType=_quantUnitType, quantsEnabled=_quantsEnabled, quantNameAlertView=_quantNameAlertView, quantNameEntryAlertView=_quantNameEntryAlertView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        //quants enabled by default, will set to NO if "No" seleted in the add task screens...
+        [self setQuantsEnabled:YES];
     }
     return self;
 }
@@ -143,6 +140,7 @@
     self.quantAlertView = nil;
     self.quantUnitType = nil;
     self.quantNameAlertView = nil;
+    self.quantNameEntryAlertView = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -155,14 +153,18 @@
 }
 
 #pragma mark - Add, Cancel, or Save the new task
-//FIX THE DELEGATE METHODS SENT TO THE MAIN VC (DELEGATE OF THE ADD TASK VC) SHOULD INCLUDE
-////TITLE, SUMMARY, GOAL TIME.  THERE ALSO NEED TO BE NEW PROTOCOL METHODS FOR ENDURANCE TASK.
-////******************************************************************************************
+
 -(void)didAddNewTask:(id)sender
 {
     //display alert asking whether or not to increment, if Yes, display an actionsheet with a text
     ////field for the data type name or pick from existing data types (in other tasks)
     //***********************THIS WILL NEED FIXING TO SEARCH OTHER TASKS' DATA TYPES*************
+    
+    //***********************NEED CHECKS TO VALIDATE TITLE AND SUMMARY INPUTS***********
+    
+    if (self.quantAlertView!=nil) {
+        self.quantAlertView=nil;
+    }
     self.quantAlertView = [[UIAlertView alloc] initWithTitle:@"Increment Value" message:@"Should this task increment a value?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [self.quantAlertView show];
     
@@ -189,6 +191,12 @@
 
 -(void)didSaveNewTask:(id)sender
 {
+    //trying to duplicate steps after pressing the play (timer) button, but data will be saved --> back to mainTVC.
+    if (self.quantAlertView!=nil) {
+        self.quantAlertView=nil;
+    }
+    self.quantAlertView = [[UIAlertView alloc] initWithTitle:@"Increment Value" message:@"Should this task increment a value?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+    [self.quantAlertView show];
     [self.delegate viewController:self 
               didSaveTaskWithTitle:self.taskTitleTextField.text 
                           summary:self.taskSummaryTextField.text
@@ -287,35 +295,51 @@
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (alertView==self.quantAlertView) {
+        //No quant
         if (buttonIndex==0) {
-            [self displayTimerViewController];
+            [self setQuantsEnabled:NO];
         }
+        //Yes - uses quant value --> next alert existing or new?
         else if (buttonIndex==1){
-            self.quantNameAlertView = [[UIAlertView alloc] initWithTitle:@"Unit Name" message:@"Enter the name of the units to be counted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-            self.quantNameAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+            self.quantNameAlertView = [[UIAlertView alloc] initWithTitle:@"Use Existing?" message:@"Use existing unit type or create new?" delegate:self cancelButtonTitle:@"Existing" otherButtonTitles:@"New", nil];
+            self.quantNameAlertView.alertViewStyle = UIAlertViewStyleDefault;
             [self.quantNameAlertView show];
         }
         else return;
     }
     
     else if (alertView==self.quantNameAlertView) {
+        //Existing type --> display modal tableVC with quantDataTypes from data manager to assign to new task
+        if (buttonIndex==0) {
+            DojoTableViewSelectionVC *existingTypesVC = [[DojoTableViewSelectionVC  alloc] initWithStyle:UITableViewStylePlain];
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:existingTypesVC];
+            [navController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
+            [existingTypesVC setTitle:@"Choose Type"];
+            [self presentViewController:navController animated:YES completion:NULL];
+        }
+        //New name for quant type
+        else if (buttonIndex==1) {
+            self.quantNameEntryAlertView = [[UIAlertView alloc] initWithTitle:@"New Unit Name" message:@"Enter unit to be counted." delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+            self.quantNameEntryAlertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+            [self.quantNameEntryAlertView show];
+        }
+        else return;
+    }
+    
+    else if (alertView==self.quantNameEntryAlertView) {
         if (buttonIndex==0) {
             return;
         }
         else if (buttonIndex==1) {
-            UITextField *textField = [alertView textFieldAtIndex:0];
+            UITextField *textField = [self.quantNameEntryAlertView textFieldAtIndex:0];
             self.quantUnitType = textField.text;
-            NSLog(@" quant type set to : %@", self.quantUnitType);
-            [self displayTimerViewController];
+            NSLog(@"quant unit type new set to : %@", self.quantUnitType);
+            return;
         }
-        else return;
     }
 }
 
--(void)displayTimerViewController
-{
-    //******* here you transition to the timer view controller for the added task and start the timer (begin button?) ************************
-}
+
 
 
 @end

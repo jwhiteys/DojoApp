@@ -12,6 +12,7 @@
 #import "DojoDetailVC_iPad.h"
 #import "DojoMainTableVC_iPad.h"
 
+//*******************************NEEDS IMPLEMENTATION IN THE APP DELEGATE - COLOR SCHEME!!!!!!!***********************************
 //Implement a DojoColorSchemeManager to return an array of 5 color objects (trichrome color schemes)
 typedef enum {
     DojoColorSchemeBlack,

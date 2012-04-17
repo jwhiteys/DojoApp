@@ -129,18 +129,21 @@
 
 -(void)viewController:(UIViewController *)viewController didAddTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
 {
-    
+    NSLog(@"Adding a new task: %@ and starting timer!", title);
+    //send info to data manager, add the task to context and lists, dismiss the view controller
 }
 
 -(void)viewController:(UIViewController *)viewController didCancelTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
 {
     NSLog(@"Dismissing VC after pressing Cancel...");
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 -(void)viewController:(UIViewController *)viewController didSaveTaskWithTitle:(NSString *)title summary:(NSString *)summary andGoalTime:(NSInteger)seconds isEndurance:(BOOL)enduranceBool usesQuants:(BOOL)quantBool quantUnitType:(NSString *)quantUnitName
 {
-    
+    NSLog(@"AddTaskDelegate: saving new task:%@", title);
+    //implement adding and saving task
+    [self.dataManager addNewTaskWithTitle:title summary:summary goalTimeInSeconds:seconds isEndurance:enduranceBool usesQuants:quantBool quantUnitType:quantUnitName];
 }
 
 
@@ -160,6 +163,7 @@
     [self presentViewController:navContr animated:YES completion:NULL];
 }
 
+#pragma mark - Entry Display Methods
 //implement to show the relevent table cells when the respective segmented control is selected
 -(void)displaySubjects:(id)sender
 {
